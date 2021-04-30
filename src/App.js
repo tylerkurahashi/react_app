@@ -28,20 +28,13 @@ function App() {
     },
   ];
 
-  let items = [];
-  for (let expense of expenses) {
-    items.push(<ExpenseMaster
-      title={expense.title}
-      amount={expense.amount}
-      date={expense.date}
-    />)
-  };
-
+  
   return (
 
     <div>
       <h2>Let's get started!</h2>
-      {items}
+      <ExpenseMaster
+      expenses={expenses}/>
     </div>
   );
 }
