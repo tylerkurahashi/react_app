@@ -32,7 +32,6 @@ function App() {
   return (
 
     <div>
-      <h2>Let's get started!</h2>
       <ExpenseMaster
       expenses={expenses}/>
     </div>
