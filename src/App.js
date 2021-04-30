@@ -1,4 +1,4 @@
-import ExpenseItem from "./components/js/ExpenseItem";
+import ExpenseMaster from "./components/js/ExpenseMaster";
 
 function App() {
   const expenses = [
@@ -28,14 +28,15 @@ function App() {
     },
   ];
 
-  let items = []
+  let items = [];
   for (let expense of expenses) {
-    items.push(<ExpenseItem
+    items.push(<ExpenseMaster
       title={expense.title}
       amount={expense.amount}
       date={expense.date}
     />)
-  }
+  };
+
   return (
 
     <div>
