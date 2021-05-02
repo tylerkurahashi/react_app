@@ -1,4 +1,5 @@
 import ExpenseMaster from "./components/Expenses/js/ExpenseMaster";
+import NewExpenseMaster from "./components/NewExpenses/js/NewExpenseMaster";
 
 function App() {
   const expenses = [
@@ -32,6 +33,7 @@ function App() {
   return (
 
     <div>
+      <NewExpenseMaster />
       <ExpenseMaster
       expenses={expenses}/>
     </div>
