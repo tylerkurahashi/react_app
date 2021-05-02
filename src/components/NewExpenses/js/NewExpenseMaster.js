@@ -16,7 +16,7 @@ const NewExpenseMaster = () => {
             onSaveExpenseData={saveExpenseDataHandler}
             />
         </div>
-    )
+    );
 };
 
 export default NewExpenseMaster;
