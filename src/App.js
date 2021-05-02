@@ -1,4 +1,4 @@
-import ExpenseMaster from "./components/js/ExpenseMaster";
+import ExpenseMaster from "./components/Expenses/js/ExpenseMaster";
 
 function App() {
   const expenses = [
