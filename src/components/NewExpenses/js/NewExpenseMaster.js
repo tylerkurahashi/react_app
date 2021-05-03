@@ -1,8 +1,10 @@
+import {useState} from 'react';
 import '../css/NewExpenseMaster.css';
 
 import ExpenseForm from './ExpenseForm';
 
 const NewExpenseMaster = (props) => {
+    const [formActive, setFormActive] = useState(false);
     const saveExpenseDataHandler = (enteredExpenseData) => {
         const expenseData = {
             ...enteredExpenseData,
@@ -11,9 +13,21 @@ const NewExpenseMaster = (props) => {
         props.onAddExpense(expenseData)
         console.log(expenseData);
     };
+
+    const deactivateHandler = () => {
+        setFormActive(false);
+    };
+
+    const activateHandler = () => {
+        setFormActive(true);
+    };
+
     return (
         <div className='new-expense'>
             <ExpenseForm 
+            isActive={formActive}
+            onCancel={deactivateHandler}
+            onActivate={activateHandler}
             onSaveExpenseData={saveExpenseDataHandler}
             />
         </div>
