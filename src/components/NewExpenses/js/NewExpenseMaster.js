@@ -24,12 +24,11 @@ const NewExpenseMaster = (props) => {
 
     return (
         <div className='new-expense'>
-            <ExpenseForm 
-            isActive={formActive}
+            {!formActive && <button onClick={activateHandler}>Add New Expense</button>}
+            {formActive && <ExpenseForm 
             onCancel={deactivateHandler}
-            onActivate={activateHandler}
             onSaveExpenseData={saveExpenseDataHandler}
-            />
+            />}
         </div>
     );
 };
