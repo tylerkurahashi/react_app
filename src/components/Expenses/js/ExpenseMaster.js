@@ -18,20 +18,18 @@ function ExpenseMaster(props) {
     });
 
     return (
-        <li>
-            <Card className='expenses'>
-                <ExpensesFilter
-                    selected={filteredYear}
-                    onChangeFilter={filterChangeHandler}
-                />
-                <ExpensesChart 
+        <Card className='expenses'>
+            <ExpensesFilter
+                selected={filteredYear}
+                onChangeFilter={filterChangeHandler}
+            />
+            <ExpensesChart
                 expenses={filteredItems}
-                />
-                <ExpensesList 
+            />
+            <ExpensesList
                 items={filteredItems}
-                />
-            </Card>
-        </li>
+            />
+        </Card>
     )
 }
 
