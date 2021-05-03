@@ -1,8 +1,10 @@
+import {useState} from 'react';
+
 import ExpenseMaster from "./components/Expenses/js/ExpenseMaster";
 import NewExpenseMaster from "./components/NewExpenses/js/NewExpenseMaster";
 
 function App() {
-  const expenses = [
+  const DUMMY_EXPENSES = [
     {
       id: 'e1',
       title: 'Toilet Paper',
@@ -29,11 +31,19 @@ function App() {
     },
   ];
 
+  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+  const addExpenseHandler = (expense) => {
+    setExpenses(prevExpenses => {
+      return [expense, ...prevExpenses]
+    })
+  }
+
   
   return (
 
     <div>
-      <NewExpenseMaster />
+      <NewExpenseMaster 
+      onAddExpense={addExpenseHandler}/>
       <ExpenseMaster
       expenses={expenses}/>
     </div>
